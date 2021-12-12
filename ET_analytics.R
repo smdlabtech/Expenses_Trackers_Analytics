@@ -1,6 +1,4 @@
 #******** loading Packages ********
-#library(hrbrthemes)
-
 library(tm)
 library(webshot)
 library(stringi)
@@ -24,7 +22,6 @@ library(leaflet)
 library(DT)
 library(tibble) 
 library(shinydashboard)
-#library(shinydashboardPlus)     #developped by young people (for free)
 library(shinyWidgets)
 library(shinythemes)
 library(tidyverse)
@@ -36,7 +33,6 @@ library(readr)
 library(magrittr)
 library(fpp)
 library(sp)
-#tags$hr(), #barre horizontale
 
 #********************************************************************************************
 #******************************** User Interface ********************************************
