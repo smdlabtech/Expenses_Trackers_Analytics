@@ -7,7 +7,7 @@ ET_analytics is an expenses tracking application. He has the particularity of ha
 - [How to use](#usage)
 - [Installation](#install)
 - [Features](#features)
-- [Sponsors 🏆](#sponsors
+- [Sponsors 🏆](#sponsors)
 
 <h2 id="example">Example</h2>
 To see how this application works click on the following link : https://smd-lab-tech.shinyapps.io/ET_Smart_App/
