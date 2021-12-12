@@ -3,3 +3,6 @@ ET_analytics is an expenses tracking application. He has the particularity of ha
 
 Launch App : https://smd-lab-tech.shinyapps.io/ET_Smart_App/
 
+# Table of contents
+
+- [Example](#example)
