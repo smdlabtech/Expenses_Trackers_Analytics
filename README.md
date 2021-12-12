@@ -9,8 +9,7 @@ ET_analytics is an expenses tracking application. He has the particularity of ha
 - [Sponsors 🏆](#sponsors)
 
 <h2 id="install">Installations</h2>
-
-To install Libraries:
+To run this application, you need to install the following libraries:
 
 ```
 library(tm)
