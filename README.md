@@ -53,3 +53,15 @@ library(sp)
 To see how this application works click on the following link : https://smd-lab-tech.shinyapps.io/ET_Smart_App/
 
 
+
+
+<h2 id="sponsors">
+
+Sponsors 🏆
+
+</h2>
+
+> There are no sponsors yet
+
+
+
