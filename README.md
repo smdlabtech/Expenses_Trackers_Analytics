@@ -12,6 +12,9 @@ ET_analytics is an expenses tracking application. He has the particularity of ha
 <h2 id="example">Example</h2>
 To see how this application works click on the following link : https://smd-lab-tech.shinyapps.io/ET_Smart_App/
 
+<h2 id="install">How to use</h2>
+
+
 <h2 id="install">Installations</h2>
 
 To install Libraries:
