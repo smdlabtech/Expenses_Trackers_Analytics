@@ -3,13 +3,10 @@ ET_analytics is an expenses tracking application. He has the particularity of ha
 
 # Table of contents
 
-- [How to use](#usage)
 - [Installations](#install)
+- [How to use](#usage)
 - [Features](#features)
 - [Sponsors 🏆](#sponsors)
-
-<h2 id="install">How to use</h2>
-To see how this application works click on the following link : https://smd-lab-tech.shinyapps.io/ET_Smart_App/
 
 <h2 id="install">Installations</h2>
 
@@ -51,4 +48,8 @@ library(magrittr)
 library(fpp)
 library(sp)
 ```
+
+<h2 id="install">How to use</h2>
+To see how this application works click on the following link : https://smd-lab-tech.shinyapps.io/ET_Smart_App/
+
 
