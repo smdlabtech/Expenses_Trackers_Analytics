@@ -64,7 +64,7 @@ Sponsors 🏆
 
 </h2>
 
-> There are no sponsors yet
+> @smdlabtech
 
 
 
