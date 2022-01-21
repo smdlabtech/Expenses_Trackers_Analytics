@@ -1,5 +1,8 @@
 # Expenses Trackers 
 ET_analytics is an expenses tracking application. He has the particularity of having a date range on which you can choose the period to analyze.
+- Javascript, Css, Shiny
+- Time series
+- Text mining and topic modeling (NLP)
 
 # Table of contents
 
