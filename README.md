@@ -1,4 +1,4 @@
-# Expenses Trackers 
+# Expenses Tracker  
 ET_analytics is an R Shiny expenses tracking application. He has the particularity of having a date range on which you can choose the period to analyze.
 This application includes :  
 - Javascript, Css, Shiny
