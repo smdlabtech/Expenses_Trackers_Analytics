@@ -1,19 +1,19 @@
 # Expenses Tracker  
-ET_analytics is an R Shiny expenses tracking application. He has the particularity of having a date range on which you can choose the period to analyze.
-This application includes :  
+ET_analytics est une application R Shiny de suivi des dépenses. Il a la particularité d'avoir une plage de dates sur laquelle vous pouvez choisir la période à analyser.
+Cette application comprend : 
 - Javascript, Css, Shiny
 - Time series
-- Text mining and topic modeling (NLP)
+- Text mining et modélisation de sujets (NLP)
 
-# Table of contents  
+# Table des matières  
 - [Installations](#install)
-- [How to use](#usage)
-- [Features](#features)
+- [Mode d'emploi](#usage)
+- [Fonctionnalités](#features)
 - [Sponsors 🏆](#sponsors)
 
 <h2 id="install">Installations</h2>
 
-To run this application, you need to install the following libraries:
+Pour exécuter cette application, vous devez installer les bibliothèques suivantes :
 
 ```
 library(tm)
@@ -53,7 +53,7 @@ library(sp)
 ```
 
 <h2 id="install">How to use</h2>
-To see how this application works click on the following link : https://smd-lab-tech.shinyapps.io/ET_Smart_App/
+Pour voir comment fonctionne cette application, cliquez sur le lien suivant : https://smd-lab-tech.shinyapps.io/ET_Smart_App/
 
 
 
