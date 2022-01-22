@@ -53,7 +53,8 @@ library(sp)
 ```
 
 <h2 id="install">How to use</h2>
-Pour voir comment fonctionne cette application, cliquez sur le lien suivant : https://smd-lab-tech.shinyapps.io/ET_Smart_App/
+Pour voir comment fonctionne cette application, cliquez sur le lien suivant :  
+https://smd-lab-tech.shinyapps.io/ET_Smart_App/
 
 
 
