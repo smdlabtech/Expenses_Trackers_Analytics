@@ -13,7 +13,7 @@ Cette application comprend :
 
 <h2 id="install">Installations</h2>
 
-Pour exécuter cette application, vous devez installer les bibliothèques suivantes :
+Pour exécuter cette application, vous devez installer au préalable les bibliothèques suivantes :
 
 ```
 library(tm)
