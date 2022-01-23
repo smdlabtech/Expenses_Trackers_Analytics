@@ -54,7 +54,7 @@ library(sp)
 
 <h2 id="install">Mode d'emploi</h2>
 Pour voir comment fonctionne cette application, cliquez sur le lien suivant :  
-https://smd-lab-tech.shinyapps.io/ET_Smart_App/
+ https://smd-lab-tech.shinyapps.io/Expenses_Tracker/
 
 
 
