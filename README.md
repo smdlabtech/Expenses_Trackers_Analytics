@@ -13,7 +13,7 @@ https://smd-lab-tech.shinyapps.io/Expenses_Tracker/
 - [Fonctionnalités](#features)
 - [Sponsors 🏆](#sponsors)
 
-<h2 id="install">Installations</h2>
+<h2 id="install">Installations requises</h2>
 
 Pour exécuter cette application, vous devez installer au préalable les bibliothèques ci-dessous puis les charger :
 
