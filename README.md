@@ -3,7 +3,8 @@ ET_analytics est une application R Shiny de suivi des dépenses. Il a la particu
 Cette application comprend :
 - Javascript, Css, Shiny
 - Time series
-- Text mining et modélisation de sujets (NLP) 
+- Text mining et modélisation de sujets (NLP)  
+
 https://smd-lab-tech.shinyapps.io/Expenses_Tracker/
 
 # Table des matières 
