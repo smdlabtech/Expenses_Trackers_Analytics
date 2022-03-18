@@ -5,6 +5,7 @@ Cette application comprend :
 - Time series
 - Text mining et modélisation de sujets (NLP)  
 
+Pour voir comment fonctionne cette application, cliquez sur le lien suivant :  
 https://smd-lab-tech.shinyapps.io/Expenses_Tracker/
 
 # Table des matières 
@@ -13,10 +14,6 @@ https://smd-lab-tech.shinyapps.io/Expenses_Tracker/
 - [Mode d'emploi](#usage)
 - [Fonctionnalités](#features)
 - [Sponsors 🏆](#sponsors)
-
-<h2 id="prise_main">Prise en main de l'outil</h2>
-Pour voir comment fonctionne cette application, cliquez sur le lien suivant :  
- https://smd-lab-tech.shinyapps.io/Expenses_Tracker/
 
 <h2 id="install">Installations</h2>
 
@@ -58,13 +55,6 @@ install.packages('magrittr')
 install.packages('fpp')
 install.packages('sp')
 ```
-
-<h2 id="install">Mode d'emploi</h2>
-L'application contient de 2 onglets principaux :
-1°)
-2°)
-
-
 
 
 <h2 id="sponsors">
