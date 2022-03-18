@@ -5,7 +5,7 @@ Cette application comprend :
 - Time series
 - Text mining et modélisation de sujets (NLP)  
 
-Pour voir comment fonctionne cette application, cliquez sur le lien suivant :  
+Pour une prise en main de l'application, cliquez sur le lien suivant et puis charger le jeu de données :  
 https://smd-lab-tech.shinyapps.io/Expenses_Tracker/
 
 # Table des matières 
