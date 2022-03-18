@@ -13,7 +13,7 @@ Cette application comprend :
 
 <h2 id="install">Installations</h2>
 
-Pour exécuter cette application, vous devez installer au préalable les bibliothèques suivantes :
+Pour exécuter cette application, vous devez installer au préalable les bibliothèques ci-dessous puis les charger :
 
 ```
 install.packages('tm')
