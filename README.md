@@ -9,9 +9,7 @@ Pour une prise en main de l'application, cliquez sur le lien suivant et puis cha
 https://smd-lab-tech.shinyapps.io/Expenses_Tracker/
 
 # Table des matières 
-- [Prise en Main](#prise_main)
 - [Installations](#install)
-- [Mode d'emploi](#usage)
 - [Fonctionnalités](#features)
 - [Sponsors 🏆](#sponsors)
 
