@@ -12,7 +12,7 @@ Cette application comprend :
 - [Fonctionnalités](#features)
 - [Sponsors 🏆](#sponsors)
 
-<h2 id="prise_main">Prise en Main</h2>
+<h2 id="prise_main">Prise en main de l'outil</h2>
 Pour voir comment fonctionne cette application, cliquez sur le lien suivant :  
  https://smd-lab-tech.shinyapps.io/Expenses_Tracker/
 
