@@ -5,11 +5,16 @@ Cette application comprend :
 - Time series
 - Text mining et modélisation de sujets (NLP)
 
-# Table des matières  
+# Table des matières 
+- [Prise en Main](#prise_main)
 - [Installations](#install)
 - [Mode d'emploi](#usage)
 - [Fonctionnalités](#features)
 - [Sponsors 🏆](#sponsors)
+
+<h2 id="prise_main">Prise en Main</h2>
+Pour voir comment fonctionne cette application, cliquez sur le lien suivant :  
+ https://smd-lab-tech.shinyapps.io/Expenses_Tracker/
 
 <h2 id="install">Installations</h2>
 
@@ -53,8 +58,9 @@ install.packages('sp')
 ```
 
 <h2 id="install">Mode d'emploi</h2>
-Pour voir comment fonctionne cette application, cliquez sur le lien suivant :  
- https://smd-lab-tech.shinyapps.io/Expenses_Tracker/
+L'application contient de 2 onglets principaux :
+1°)
+2°)
 
 
 
