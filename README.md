@@ -32,7 +32,7 @@ install.packages('plotly')
 install.packages('IRdisplay')
 install.packages('stats')
 install.packages('data.table')
-install.packages('openxlsx')                #library de ConvertToDate 
+install.packages('openxlsx')                
 install.packages('sp')
 install.packages('shiny')
 install.packages('leaflet')
