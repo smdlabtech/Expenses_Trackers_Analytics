@@ -57,7 +57,7 @@ install.packages('sp')
 
 <h2 id="sponsors">
 
-Sponsors 🏆
+Sponsors 🏆@mdlabtech
 
 </h2>
 
