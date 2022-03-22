@@ -27,154 +27,127 @@ library(shinythemes)
 library(shinyjs)
 library(shiny)
 
-#********************************************************************************************
-#******************************** User Interface ********************************************
-# Definir l'interface Utilisateur pour l'app de telechargement de donnees----
 
+#-------------------------------------------
+#           USER INTERFACE AREA
+#-------------------------------------------
 ui <- shinyUI(
   
-  #------ Page d'Acceuil du tableau de bord -------
   dashboardPage(skin="green",   #skin: pour changer la changer la couleur du tableau de bord
                 
                 ##A) Titre du tableau de bord
-                # dashboardHeader(disable = TRUE),  # Enlever l'entete de la page
                 dashboardHeader(title = "Expenses Tracker "),
-
+                
                 # ###B) Barre du Cote du Dashboard
-                dashboardSidebar(disable = TRUE), # Enlever le side barre
-                
-                # dashboardSidebar(tags$style(type = 'text/css',".badge{min-width: 200px;}"),
-                # 
-                #                  sidebarMenu(
-                #                    # #--- Insertion du Menu sur la barre de cote droite ---
-                #                    #menuItem("Appli en cours de developpement !", tabName = 'dashboard'),
-                # 
-                # 
-                #                  )),
-                
+                dashboardSidebar(tags$style(type = 'text/css',".badge{min-width: 200px;}"),
+                                
+                                 # --- Insertion du Menu du cote droite ---
+                                 sidebarMenu(
+                                   menuItem("Dev. in progress !", tabName = 'dashboard'),
+                                     menuItem(
+                                       fileInput("file1", 
+                                                 "Upload CSV file",
+                                                 multiple = TRUE,
+                                                 accept = c("text/csv","text/comma-separated-values,text/plain", ".csv"))
+                                     ),
+                                   
+                                   menuItem("Words cloud of expenses",
+                                     sliderInput("freq","Minimum frequency:", min = 1,  max = 100, value = 15),
+                                     sliderInput("word","Maximum number of Words:",min = 1,  max = 400,  value = 100)
+                                   ),
+                                   
+                                   menuItem(actionButton("go", "Reset date range",icon = icon("calendar"))),
+                                   menuItem(uiOutput('daterange'))
+                                   
+                                 ) #End sidebarMenu
+                                
+                                ), #End dashboardSidebar
                 
                 ###C) Corp de la navigation dans l'application
                 dashboardBody(
                   navbarPage(
                     
-                  titlePanel(""),
-                  
-                  
-                  # # Page1-------------------------------------------------------------------------------------------------------------------------------
-                  tabPanel("Import Data",icon = icon("database"),
-                           
-                           fluidPage(
-                             #--- Affichage de la table de donnees en joli format HTML ---
-                             fluidRow(
-                               sidebarLayout(#-- Panneau lateral pour les entrees
-                                 sidebarPanel(width = 3,
-                                              
-                                              #--Charger le fichier data.csv --
-                                              fileInput("file1", "Upload CSV File",multiple = TRUE,accept = c("text/csv","text/comma-separated-values,text/plain", ".csv")),
-                                              
-                                              tags$hr(),
-                                              tags$hr(),
-                                              actionButton("go", "Reset date range",icon = icon("calendar")),
-                                              tags$hr(), #barre horizontale
-                                              uiOutput('daterange'),
-                                              
-                                 ),
-                                 
-                                 #--- Paneau principal pour l'affichage des resultats ---
-                                 mainPanel(tableOutput("contents"),
-                                           column(1),column(10, reactableOutput("table1")),column(1) #Affichage de la table de Choose CSV Data File
-                                 )
+                    titlePanel(""),
+                    
+                    # # Page1-------------------------------------------------------------------------------------------------------------------------------
+                    tabPanel("Import Data",icon = icon("database"),
+                             add_busy_spinner(spin = "fading-circle"),
+                             fluidPage(
+                               fluidRow(
+                                 tableOutput("contents"),
+                                 column(1),column(10, reactableOutput("table1")),column(1)
                                )
-                             )  #End fluidRow
+                             )
                              
-                           )
-                           
-                  ), #End tabPanel
+                    ), #End tabPanel
+                    
+                    # Page2-------------------------------------------------------------------------------------------------------------------------------
+                    tabPanel("Overview",icon = icon("chart-line"),
+                             
+                             fluidPage(
+                               add_busy_spinner(spin = "fading-circle"),
+                               #1------------------
+                               fluidRow(column(1),
+                                        valueBoxOutput(width=4,'valuebox1'),
+                                        valueBoxOutput(width=2,'valuebox3'),
+                                        valueBoxOutput(width=2,'valuebox2'),
+                                        valueBoxOutput(width=2,'valuebox4')
+                               ),
+                               
+                               #2------------------
+                               #box(width=5,status = "danger",plotOutput('plot4',height = 300),downloadButton('Save_plot4','')),
+                               fluidRow(column(1),
+                                        box(width=5,plotOutput('plot3',height = 300)),
+                                        box(width=5,plotlyOutput('plot8',height = 300))
+                                        
+                                        
+                               ), 
+                               
+                               #------------------
+                               fluidRow(column(1),
+                                        box(width=5,title = "Most frequent expenses",plotOutput('plot5',height = 320)),
+                                        box(width=5,plotOutput('plot6',height = 360))
+                                        
+                               ),
+                               
+                               #3------------------ Affichage des tables de donnees ------------
+                               fluidRow(column(1),
+                                        box(width = 3,title = "Selected Months",solidHeader = FALSE,collapsible = TRUE,reactableOutput("table9")),
+                                        box(width = 5,title = "Selected Purchases",solidHeader = FALSE,collapsible = TRUE,reactableOutput("table5")),
+                                        box(width = 2,title = "Selected Years",solidHeader = FALSE,collapsible = TRUE,reactableOutput("table7"))
+                               ),
+                               
+                               #4------------------
+                               fluidRow(column(1),
+                                        # box(width=5,title = "Most frequent expenses",plotOutput('plot5',height = 320)),
+                                        
+                                        box(width=5,plotOutput('plot4',height = 300)),
+                                        box(width=5,plotOutput('plot7',height = 300)) #title="Spenders"
+                               ), #End fluidRow
+                               fluidRow(column(1),
+                                        box(width = 5,title = "Spenders list",solidHeader = FALSE,collapsible = TRUE,reactableOutput("table10"))
+                               )
+                               
+                         ) #End FluidPage
+                             
+                    ) #End tabPanel
+                    
+                  ) #End navbarPage 
                   
-                  # Page2-------------------------------------------------------------------------------------------------------------------------------
-                  tabPanel("Interactive Overview",icon = icon("bar-chart-o"),
-                           
-                           fluidPage(
-                             
-                             #------------------
-                             fluidRow(column(1),
-                                      valueBoxOutput(width=4,'valuebox1'),
-                                      valueBoxOutput(width=2,'valuebox3'),
-                                      valueBoxOutput(width=2,'valuebox2'),
-                                      valueBoxOutput(width=2,'valuebox4')
-                             ),
-                             
-                             #------------------
-                             fluidRow(column(1),
-                                      #box(width=5,status = "danger",plotOutput('plot4',height = 300),downloadButton('Save_plot4','')),
-                                      box(width=5,plotOutput('plot4',height = 300)),
-                                      box(width=5,plotOutput('plot3',height = 300))
-                             ), 
-                             
-                             #------------------
-                             fluidRow(column(1),
-                                      box(width=5,plotlyOutput('plot8',height = 300)),
-                                      box(width=5,plotOutput('plot6',height = 300))
-                                      
-                             ),
-                             
-                             #------------------
-                             fluidRow(column(1),
-                                      box(width = 3,title = "Selected Months",solidHeader = FALSE,collapsible = TRUE,reactableOutput("table9")),
-                                      box(width = 5,title = "Summary statistics for selected date range",solidHeader = FALSE,collapsible = TRUE,reactableOutput("table5")),
-                                      box(width = 2,title = "Selected Years",solidHeader = FALSE,collapsible = TRUE,reactableOutput("table7"))
-                                      
-                             ),
-                             
-                             #------------------
-                             fluidRow(column(1),
-                                      box(width=5,title = "Most frequent expenses",plotOutput('plot5',height = 320)),
-                                      box(width=5,title="Spenders",plotOutput('plot7',height = 320))
-                             ), #End fluidRow
-                             
-                             #------------------
-                             fluidRow(column(1),
-                                      box(width=3,
-                                          title="Words cloud",tatus = "warning",
-                                          sliderInput("freq","Minimum frequency:", min = 1,  max = 100, value = 15),
-                                          sliderInput("word","Maximum number of Words:",min = 1,  max = 400,  value = 100)
-                                      )#,
-                                      
-                                      ,box(width = 4,title = "Spenders list",solidHeader = FALSE,collapsible = TRUE,reactableOutput("table10"))
-                             ) 
-                             
-                           )#End FluidPage
-                           
-                  )#,  #End tabPanel
-                  
-                  # Page4------------------------------------------------------------------------------------------------------------------------------------------
-                  # #tabbpanel for 3 next month expenses futures
-                  # tabPanel("Next forcasts",icon=icon("line-chart"),
-                  #          fluidPage(
-                  #            fluidRow(
-                  #              
-                  #            )#End fluidRow
-                  #            
-                  #          ) #End FluidPage
-                  #          
-                  # ) #End tabPanel
-                  
-                )#End navbarPage 
-                
-                )#End dashboardBody
-                
+           ) #End dashboardBody
                 
   ) #End dashboardPage
   
 ) #End shinyUI
 
-#**************************************************************
-#*************************** Server ***************************
+#-------------------------------------------
+#               SERVER AREA                     
+#-------------------------------------------
 server<-function(input, output, session) {
   
-  #====================================================== df1 ======================================================
   output$contents <-reactive({
-    
+    #-----------------------------------------------------------------------
+    # Partie du charmagement des donnees et calculs (si on enleve tryCatch)
     req(input$file1) #requete de chargement du jeu de donnees
     
     tryCatch(
@@ -204,9 +177,7 @@ server<-function(input, output, session) {
       }
     )   
     
-    
     #-------------------------------------- Creation de la daterange --------------------------------------------
-    
     #Ajout de la daterange pour permettant l'affichage de la df1 apres mise a jour
     output$daterange <- renderUI({
       dateRangeInput(inputId = "daterange",label = "Select a date range",
@@ -221,34 +192,30 @@ server<-function(input, output, session) {
     })
     
     #-------------------- Mise a jour de la table df1 en fonction de la daterange selectionnee -------------------
-    
     #Mettre a jour la table df1 apres les selection des dates de debut et de fin 
     Update_df1 <- reactive({
       comp.reg.final <- df1[which(df1$Date >= input$daterange[1] & df1$Date <= input$daterange[2]),]
       return (comp.reg.final)
-      
     })
     
     #Remmettre a jour la plage de date de depart(Reset data range)
     observeEvent(input$go , {
-      updateDateRangeInput(session, "daterange", start = min(df1$Date), end = max(df1$Date)
-      )
+      updateDateRangeInput(session, "daterange", start = min(df1$Date), end = max(df1$Date))
     })
     
     #--------------------------------------------------------------------------------------------------
+    show_modal_spinner() # show the modal window
+    remove_modal_spinner() # remove it when done
     #--------------------------------------------------------------------------------------------------
     #                                   Interactive plot
-    #
     #------------------------- Interactive plot : plot3 and Save (.img, .png) -------------------------
     # #graphique d'evolution 
     output$plot3<-renderPlot({
-      
       Purchase_grp<-Update_df1() %>%
         group_by(Purchase) %>%
         summarise(Costs = sum(Costs)) %>%
         mutate(rank = dense_rank(desc(Costs))) %>%
         arrange(desc(Costs))
-      
       Purchase_grp<-data.frame(Purchase_grp)
       
       ggplot(data = Purchase_grp,aes(x=reorder(Purchase,Costs),y=Costs),label=Costs)+
@@ -260,8 +227,7 @@ server<-function(input, output, session) {
     # #------------------------- Interactive plot : plot4 and Save (.img, .png) -----------------------------
     output$plot4<-renderPlot({
       ggplot(Update_df1(), aes(Purchase, Costs, fill = factor(Purchase))) +
-        geom_boxplot()+
-        ggtitle("Boxplot of the purchase types")
+        geom_boxplot()+ggtitle("Boxplot of the purchase types")
     })
     
     #----
@@ -305,7 +271,6 @@ server<-function(input, output, session) {
     
     # #------------------------- Interactive plot : plot6 and Save (.img, .png) -----------------------------
     output$plot6<-renderPlot({
-      
       Costs_day_sum<-aggregate(Costs~Date, data=Update_df1(), FUN = sum)
       Costs_day_sum$Month=month(Costs_day_sum$Date)
       
@@ -344,7 +309,6 @@ server<-function(input, output, session) {
     # #------------------------- Interactive plot : plot8 and Save (.img, .png) -----------------------------
     # #donut chart of Purchase
     output$plot8<-renderPlotly({
-      
       Purchase_donut<-Update_df1() %>%
         group_by(Purchase) %>%
         summarise(Costs = sum(Costs)) %>%
@@ -396,7 +360,6 @@ server<-function(input, output, session) {
       
       Total_big_grp<-data.frame(Total_big_grp)
       Total_big_grp_top10<-head(Total_big_grp,10) #Afficher le Top10 des plus depensiers
-      #Total_big_grp_costs<-sum(Total_big_grp_top10$Costs)      #Somme des couts des depenses des top10
       Total_big_grp_costs<-sum(Total_big_grp_top10$pct)         #Somme des %centage des couts des depenses des top10
       
       
@@ -460,14 +423,14 @@ server<-function(input, output, session) {
           
           #customization du total des couts
           Costs = colDef(footer = JS("function(colInfo) {
-          var total = 0
-          colInfo.data.forEach(function(row) {
-            total += row[colInfo.column.id]})
-          return total.toFixed(2)+' EUR'}")
+                                     var total = 0
+                                     colInfo.data.forEach(function(row) {
+                                     total += row[colInfo.column.id]})
+                                     return total.toFixed(2)+' EUR'}")
                          
-          ,format = colFormat(currency = "EUR"))
+                         ,format = colFormat(currency = "EUR"))
           
-        ),
+          ),
         
         #theme et sortie du tableau et de la fenetre de recherche
         theme = reactableTheme( 
@@ -479,10 +442,9 @@ server<-function(input, output, session) {
         ),
         
         defaultColDef = colDef(footerStyle = list(fontWeight = "bold")) #Mise en forme du footer 
-      )
+        )
       
-    })
-    
+})
     
     #------------------------- Interactive table : table5 and Save (.img, .png) -------------------------
     output$table5 <- renderReactable({
@@ -490,16 +452,16 @@ server<-function(input, output, session) {
                   group_by(Purchase) %>%
                   summarise(Costs = sum(Costs)) %>%
                   mutate(pct= round(prop.table(Costs),4)) %>%
-                  arrange(desc(Costs))
+                  arrange(desc(Costs)),
                 
-                ,searchable = TRUE,
+                #,searchable = TRUE, # Hide a search area
                 
                 columns = list(
                   Costs=colDef(format = colFormat(currency = "EUR", separators = TRUE, locales = "de-DE")),
                   pct = colDef(format = colFormat(percent = TRUE, digits = 1))
                 )
                 
-                ,defaultPageSize = 8
+                ,defaultPageSize = 12
                 
       )
     })
@@ -519,6 +481,7 @@ server<-function(input, output, session) {
                 columns = list(
                   Costs=colDef(format = colFormat(currency = "EUR", separators = TRUE, locales = "de-DE"))
                 )
+                ,defaultPageSize = 12
       )
     })
     
@@ -564,14 +527,14 @@ server<-function(input, output, session) {
       
     })
     
-    #------------------------------------------------------------------------------------------------------------
-    #------------------------------------------------------------------------------------------------------------  
-    
-  }) #output$contents
-  
-} #-------- Accolade de fermeture --------
-#End function(input, output, session)
+#------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------
+}) #output$contents
 
-#************ Creation of Shiny App ************
-# Create Shiny app ----
+#########################
+} # Ending server portion
+
+#----------------------
+#     Lanching APP
+#----------------------
 shinyApp(ui, server)
