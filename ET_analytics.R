@@ -1,7 +1,7 @@
 #------------------
 # Loading Packages
 #------------------
-library(tidyverse)
+library(tidyverse)   # A data science package : contains multiple packages
 library(tm)
 library(stringi)
 library(SnowballC)
