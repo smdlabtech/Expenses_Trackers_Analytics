@@ -20,7 +20,6 @@ Pour exécuter cette application, vous devez installer au préalable les bibliot
 ```
 install.package("tidyverse") #data science package : contains multiple packages
 install.package("tm")
-install.package("webshot")
 install.package("stringi")
 install.package("SnowballC")
 install.package("wordcloud")
@@ -35,7 +34,6 @@ install.package("stats")
 install.package("data.table")
 install.package("openxlsx")                
 install.package("sp")
-install.package("leaflet")
 install.package("DT")
 install.package("lubridate")
 install.package("magrittr")
@@ -48,7 +46,6 @@ install.package("shinyWidgets")
 install.package("shinythemes")
 install.package("shinyjs")
 install.package("shiny")
-
 ```
 
 
