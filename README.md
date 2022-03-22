@@ -20,17 +20,13 @@ Pour exécuter cette application, vous devez installer au préalable les bibliot
 ```
 install.package("tidyverse") #data science package : contains multiple packages
 install.package("tm")
-install.package("stringi")
 install.package("SnowballC")
 install.package("wordcloud")
 install.package("gtsummary")
 install.package("RColorBrewer")
 install.package("reactable")
 install.package("kableExtra")
-install.package("ggrepel")
 install.package("plotly")
-install.package("IRdisplay")
-install.package("stats")
 install.package("data.table")
 install.package("openxlsx")                
 install.package("sp")
