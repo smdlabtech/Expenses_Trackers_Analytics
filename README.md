@@ -18,7 +18,7 @@ https://smd-lab-tech.shinyapps.io/Expenses_Tracker/
 Pour exécuter cette application, vous devez installer au préalable les bibliothèques ci-dessous puis les charger :
 
 ```
-install.package("tidyverse") #data science package
+install.package("tidyverse") #data science package : contains multiple packages
 install.package("tm")
 install.package("webshot")
 install.package("stringi")
