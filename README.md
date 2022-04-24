@@ -1,6 +1,6 @@
 # Expenses Tracker  
-ET_analytics est une application R Shiny de suivi des dépenses. Il a la particularité d'avoir une plage de dates sur laquelle vous pouvez choisir la période à analyser.  
-Cette application comprend :
+ET_analytics est une application **R** **Shiny** de suivi des dépenses. Il a la particularité d'avoir une plage de dates sur laquelle vous pouvez choisir la période à analyser.  
+Cette application comprend :  
 - Javascript, Css, Shiny
 - Time series
 - Text mining et modélisation de sujets (NLP)  
