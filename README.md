@@ -44,13 +44,6 @@ install.package("shinyjs")
 install.package("shiny")
 ```
 
-
-<h2 id="sponsors">
-
-Sponsors 🏆@smdlabtech
-
-</h2>
-
 > @smdlabtech
 
 
