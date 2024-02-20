@@ -1,4 +1,8 @@
 # Expenses Tracker  
+
+[**PLATFORME CENTRALE- SMD LABTECH TASKS MANAGER WEB APP**](https://lookerstudio.google.com/u/0/reporting/15699df7-d3bd-4b0f-8834-647745c6f882/page/p_khucsd4had)  
+
+
 ET_analytics est une application **R** **Shiny** de suivi des dépenses. Il a la particularité d'avoir une plage de dates sur laquelle vous pouvez choisir la période à analyser.  
 Cette application comprend :  
 - Javascript, Css, Shiny
