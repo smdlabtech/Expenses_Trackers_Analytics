@@ -149,15 +149,21 @@ server<-function(input, output, session) {
   
   output$contents <-reactive({
     #-----------------------------------------------------------------------
-    # Partie du charmagement des donnees et calculs (si on enleve tryCatch)
+    # Partie du charmagement des donnees et calculs (si on enleve tryCatch) Inpim
+    
+    ##  Input pour charger les données par le slider input
     req(input$file1) #requete de chargement du jeu de donnees
+    
     
     tryCatch(
       {
-        #--Upload CSV Data File--
+        
+        #-------------------------------------#
+        # 1. (Read data via input files)
         df1 <- read.csv(input$file1$datapat,header = T,sep = ',', stringsAsFactors=FALSE, fileEncoding="latin1")
         colnames(df1)<-c("Designation","Costs","Date","Purchase")  #Renommer les Champs de la table de donnees ("Designation","Prix","Date","Achat")
-        df1$Date<-convertToDate(df1$Date)                          #convertir le format de date excel en format r date
+        df1$Date<-convertToDate(df1$Date)   #convertir le format de date excel en format r date
+
         
         #Mise en format des variables de la table de donnees de base
         df1$Designation=as.factor(df1$Designation)
