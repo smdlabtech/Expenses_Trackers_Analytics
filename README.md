@@ -1,7 +1,7 @@
 # Expenses Tracker  
 
 <p align="left"> 
-    <img width="600" height="600" src="assets/img/logo_shiny.png" align="left"></img>
+    <img width="50" height="50" src="assets/img/logo_shiny.png" align="left"></img>
 </p>
 
 ET_analytics est une application **R** **Shiny** de suivi des dépenses. Il a la particularité d'avoir une plage de dates sur laquelle vous pouvez choisir la période à analyser.  
