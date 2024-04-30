@@ -2,7 +2,6 @@
 
 <p align="left"> 
     <img width="150" height="150" src="assets/img/logo_shiny.png" align="left"></img>
-    <img width="150" height="150" src="assets/img/logo_shiny.png" align="left"></img>
 </p>
 
 <!-- Commentaires:  Le signe <br> : permet de faire un saut de ligne -->
@@ -43,7 +42,6 @@ install.package("DT")
 install.package("lubridate")
 install.package("magrittr")
 install.package("fpp")
-
 install.package("shinydashboard")
 install.package("shinycssloaders")
 install.package("shinybusy")
