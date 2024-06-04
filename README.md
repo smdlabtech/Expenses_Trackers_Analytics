@@ -1,8 +1,11 @@
 # Expenses Tracker  
-
 <p align="left"> 
-    <img width="150" height="150" src="assets/img/logo_shiny.png" align="left"></img>
+    <a href="https://shiny.posit.co/">
+        <img width="150" height="150" src="assets/img/logo_shiny.png" align="left"></img>
+    </a>
 </p>
+
+
 
 <!-- Commentaires:  Le signe <br> : permet de faire un saut de ligne -->
 <br><br><br><br><br><br><br>
@@ -25,7 +28,7 @@ https://smd-lab-tech.shinyapps.io/Expenses_Tracker/
 
 Pour exécuter cette application en local, vous devez installer au préalable les bibliothèques listées ci-dessous :
 
-```
+```r
 install.package("tidyverse") # data science package
 install.package("tm")
 install.package("SnowballC")
