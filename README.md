@@ -3,20 +3,21 @@
     <a href="https://shiny.posit.co/">
         <img width="150" height="150" src="assets/img/logo_shiny.png" align="left"></img>
     </a>
+    <a href="https://smd-lab-tech.shinyapps.io/Expenses_Tracker/">
+        <img width="300" src="assets/img/expenses_tracker_overview.JPG" align="center"></img>
+    </a>
 </p>
 
-
-
 <!-- Commentaires:  Le signe <br> : permet de faire un saut de ligne -->
-<br><br><br><br><br><br><br>
-ET_analytics est une application **R** **Shiny** de suivi des dépenses. Il a la particularité d'avoir une plage de dates sur laquelle vous pouvez choisir la période à analyser. 
+<br>
+ET_analytics est une application <strong>RShiny</strong> de suivi des dépenses. Il a la particularité d'avoir une plage de dates sur laquelle vous pouvez choisir la période à analyser. 
 
 Cette application comprend :    
 - Javascript, Css, Shiny
 - Time series
 - Text mining et modélisation de sujets (NLP)  
 
-Pour une prise en main de l'application, cliquez sur le lien suivant et puis charger le jeu de données "18-07-2021 Expense_Data.csv" :  
+Pour une prise en main de l'application, cliquez sur le lien suivant et puis charger le jeu de données *18-07-2021 Expense_Data.csv* :  
 https://smd-lab-tech.shinyapps.io/Expenses_Tracker/
 
 # Table des matières 
