@@ -1,4 +1,9 @@
-# Expenses Tracker  
+# 💰 Expenses Tracker  
+![RShiny](https://img.shields.io/badge/RShiny-Web_App-blue?style=flat&logo=r)
+![Data Science](https://img.shields.io/badge/Data_Science-Analytics-green?style=flat&logo=python)
+![NLP](https://img.shields.io/badge/NLP-Text_Mining-orange?style=flat&logo=openai)
+![Time Series](https://img.shields.io/badge/Time_Series-Forecasting-blueviolet?style=flat&logo=clockify)
+
 <p align="left"> 
     <a href="https://shiny.posit.co/">
         <img width="150" height="150" src="assets/img/logo_shiny.png" align="left"></img>
@@ -6,56 +11,64 @@
     <a href="https://smd-lab-tech.shinyapps.io/Expenses_Tracker/">
         <img width="300" src="assets/img/expenses_tracker_overview.JPG" align="center"></img>
     </a>
-</p>
+</p>  
 
-<!-- Commentaires:  Le signe <br> : permet de faire un saut de ligne -->
-<br>
-ET_analytics est une application <strong>RShiny</strong> de suivi des dépenses. Il a la particularité d'avoir une plage de dates sur laquelle vous pouvez choisir la période à analyser. 
+---
 
-Cette application comprend :    
-- Javascript, Css, Shiny
-- Time series
-- Text mining et modélisation de sujets (NLP)  
+## 📌 Présentation  
 
-Pour une prise en main de l'application, cliquez sur le lien suivant et puis charger le jeu de données : *18-07-2021 Expense_Data.csv* :  
-https://smd-lab-tech.shinyapps.io/Expenses_Tracker/
+**ET_analytics** est une application **RShiny** dédiée au suivi des **dépenses personnelles** et à l'analyse financière.  
+L'application permet d'explorer et de **visualiser** ses dépenses avec une **plage de dates interactive**.  
 
-# Table des matières 
-- [Installations](#install)
-- [Fonctionnalités](#features)
-- [Sponsors 🏆](#sponsors)
+📌 **Technologies utilisées**  
+✅ **RShiny** - Développement web interactif  
+✅ **JavaScript & CSS** - Interface utilisateur optimisée  
+✅ **Time Series Analysis** - Analyse des tendances temporelles  
+✅ **NLP & Text Mining** - Analyse de texte et modélisation de sujets  
 
-<h2 id="install">Installations requises</h2>
+🔗 **[Démo en ligne](https://smd-lab-tech.shinyapps.io/Expenses_Tracker/)**  
+📂 **Charger un dataset test** → *18-07-2021 Expense_Data.csv*  
 
-Pour exécuter cette application en local, vous devez installer au préalable les bibliothèques listées ci-dessous :
+---
+
+## 📖 Table des matières  
+- [💾 Installations](#install)  
+- [🚀 Fonctionnalités](#features)  
+- [🏆 Sponsors](#sponsors)  
+
+---
+
+<h2 id="install">💾 Installations requises</h2>  
+
+Pour exécuter cette application **en local**, installez les bibliothèques suivantes dans **R** :  
 
 ```r
-install.package("tidyverse") # data science package
-install.package("tm")
-install.package("SnowballC")
-install.package("wordcloud")
-install.package("gtsummary")
-install.package("RColorBrewer")
-install.package("reactable")
-install.package("kableExtra")
-install.package("plotly")
-install.package("data.table")
-install.package("openxlsx")                
-install.package("sp")
-install.package("DT")
-install.package("lubridate")
-install.package("magrittr")
-install.package("fpp")
-install.package("shinydashboard")
-install.package("shinycssloaders")
-install.package("shinybusy")
-install.package("shinyWidgets")
-install.package("shinythemes")
-install.package("shinyjs")
-install.package("shiny")
+install.packages(c("tidyverse", "tm", "SnowballC", "wordcloud", "gtsummary", "RColorBrewer",
+                   "reactable", "kableExtra", "plotly", "data.table", "openxlsx", "sp", "DT",
+                   "lubridate", "magrittr", "fpp", "shinydashboard", "shinycssloaders",
+                   "shinybusy", "shinyWidgets", "shinythemes", "shinyjs", "shiny"))
 ```
 
+---
+
+<h2 id="features">🚀 Fonctionnalités</h2>  
+
+📊 **Analyse des dépenses par catégorie**  
+📅 **Sélection de périodes dynamiques**  
+📈 **Visualisation des tendances temporelles (Time Series Analysis)**  
+🗣️ **Analyse des descriptions via NLP (Text Mining & Topic Modeling)**  
+📉 **Prédictions et recommandations financières**  
+
+---
+
+<h2 id="sponsors">🏆 Sponsors</h2>  
+
+✨ **Développé par [SMD Lab Tech](https://github.com/smdlabtech)**  
+📧 Contact : smdlabtech@gmail.com 
+
+---
+ 
+📜 **Licence** : Open-Source  
+
 > @smdlabtech
-
-
-
+---
